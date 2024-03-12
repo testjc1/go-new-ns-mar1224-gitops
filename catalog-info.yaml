@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-new-ns-mar1224-gitops
+  description: This is GitOps manifest for go-new-ns-mar1224   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: go-new-ns-mar1224
+    janus-idp.io/tekton: go-new-ns-mar1224 
+    backstage.io/kubernetes-id: go-new-ns-mar1224 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-new-ns-mar1224
